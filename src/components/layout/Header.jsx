@@ -26,8 +26,6 @@ const Header = () => {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  console.log(hidden);
-
   useEffect(() => {
   if (isOpen) {
     document.body.style.overflow = 'hidden';
@@ -42,13 +40,13 @@ const Header = () => {
 
   return (
     <div className={`flex justify-center items-center`}>
-      <nav className={`w-[95%] px-5 rounded-xl z-40 h-26 card fixed mx-auto top-2 transition-transform duration-300 shadow flex justify-between bg-[#f8fffc99] ${hidden ? "-translate-y-full top-0": ""}`}>
+      <nav className={`w-[95%] px-5 rounded-xl z-40 h-16 md:h-20 lg:h-26 card fixed mx-auto top-2 transition-transform duration-300 shadow flex justify-between bg-[#f8fffc99] ${hidden ? "-translate-y-full top-0": ""}`}>
       <div className='w-36'>
-         <img className='w-100' src='../../images/navlogo.png' alt='Company Logo' />
+         <img className='w-22 md:w-28 lg:w-100' src='../../images/navlogo.png' alt='Company Logo' />
       </div>
      <ul className='hidden justify-center items-center gap-6 lg:flex'>
         <li className='font-semibold'><Link className='text-xl lg:text-gray-600 hover:text-green-500 transition ease-in-out delay-150 duration-150 font-[sans] font-medium cursor-pointer uppercase' href="/">Home</Link></li>
-        <li className='font-semibold'><Link className='text-xl lg:text-gray-600 hover:text-green-500 transition ease-in-out delay-150 duration-150 font-[sans] font-medium cursor-pointer uppercase' href="/about">About</Link></li>
+        <li className='font-semibold'><Link className='text-xl lg:text-gray-600 hover:text-green-500 transition ease-in-out delay-150 duration-150 font-[sans] font-medium cursor-pointer uppercase' href="/aboutus">About</Link></li>
         <li className='font-semibold'><Link className='text-xl lg:text-gray-600 hover:text-green-500 transition ease-in-out delay-150 duration-150 font-[sans] font-medium cursor-pointer uppercase' href="/homestay">HomeStay</Link></li>
         <li className='font-semibold'><Link className='text-xl lg:text-gray-600 hover:text-green-500 transition ease-in-out delay-150 duration-150 font-[sans] font-medium cursor-pointer uppercase' href="/inventory">Inventory</Link></li>
         <li className='font-semibold'><Link className='text-xl lg:text-gray-600 hover:text-green-500 transition ease-in-out delay-150 duration-150 font-[sans] font-medium cursor-pointer uppercase' href="/gallery">Gallery</Link></li>
